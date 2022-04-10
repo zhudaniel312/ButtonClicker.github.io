@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Button Clicker</title>
+        
+        <style>
+            /*CSS below!*/
+            body {
+                background-color: rgb(36, 36, 36);
+                color: rgb(255, 242, 240);
+                font-size: 190%;
+                font-family: Georgia;
+                text-align: center;
+            }
+            #point-button{
+                width: 142px;
+                height: 50px;
+                color: black;
+                background-color: rgb(255, 228, 224);
+                border: solid 3px text;
+                font-family: Georgia;
+            }
+            #point-display{
+                font-size: 129%;
+            }
+            p {
+                font-size: 14px;
+                margin: 16px;
+                
+            }
+        </style>
+    </head>
+    <!--HTML below!-->
+    <body>
+        <h1>Button Clicker</h1>
+        <p>(designed for computers)</p>
+        <!-- Click The Button To Get A Point-->
+        <button id="point-button">Click Me!</button>
+        <div id="point-display"></div>
+        
+    </body>
+    <!--JAVASCRIPT below! -->
+    <script>
+        //elements
+        var buttonEl = document.getElementById("point-button");
+        var displayEl = document.getElementById("point-display");
+        
+        //values for game
+        var points = 0;
+        
+        /*
+        Click:
+        1. Adds a point
+        2. Displays point, must be inside to update
+        */
+        var onClickButton = function() {
+            points = points + 1;
+            displayEl.innerHTML = "<br>You Have <strong>" + points + "</strong> point(s)";
+        }
+        
+        //activates top ^
+        buttonEl.addEventListener("click", onClickButton);
+        
+    </script>
+</html>
